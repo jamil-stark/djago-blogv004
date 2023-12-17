@@ -26,7 +26,7 @@ iniconfig==2.0.0
 Kivy==2.2.1
 Kivy-Garden==0.1.5
 kivymd==1.1.1
-mysqlclient==2.2.0
+
 packaging==23.2
 Pillow==10.1.0
 platformdirs==3.11.0
