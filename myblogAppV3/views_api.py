@@ -91,9 +91,9 @@ class RegisterView(APIView):
                 email=data.get("username"), username=data.get("username")
             )
 
-            user_obj.set_password(data.get("password"))
-            user_obj.save()
-            token = generate_random_string(20)
+            # user_obj.set_password(data.get("password"))
+            # user_obj.save()
+            # token = generate_random_string(20)
 
             # set verified user:
 
