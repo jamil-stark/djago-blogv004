@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block start %}
+
+<section class="py-6">
+  <div class="container">
+    <div class="col-lg-10 col-sm-6 mb-4">
+      <a href="/" class="btn btn-primary">Go Home</a>
+      <br />
+      <br />
+      <div class="card shadow border-0 h-100">
+        <div class="row text-center">
+          <div class="col-xl-10 mx-auto">
+            <img
+              class="img-fluid card-img-responsive mt-3"
+              src="/media/{{blog_obj.image}}"
+              alt="img"
+            />
+            <br /><br />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-10 col-lg-10 mx-auto">
+            <p class="my-2 text-muted text-sm">{{blog_obj.content|safe}}</p>
+
+            <p class="text-center text-muted">
+              {{ blog_obj.slug }} || BY:
+              <a
+                class="text-uppercase text-muted text-sm letter-spacing-8"
+                href="/"
+              >
+                {{blog_obj.user.username}}
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

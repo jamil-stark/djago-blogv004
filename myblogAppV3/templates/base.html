@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  
+<!-- Mirrored from demo.bootstrapious.com/directory/1-6-1/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Apr 2021 09:21:30 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ title }}</title>
+    <link rel="shortcut icon" type="image/png" href="{% static '/media/favicon.ico' %}"/>
+
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Price Slider Stylesheets -->
+    <link rel="stylesheet" href="/media/css/nouislider.css">
+    <!-- Google fonts - Playfair Display-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
+    <!-- Google fonts - Poppins-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700">
+    <!-- swiper-->
+    <link rel="stylesheet" href="/media/css/all.css">
+    <link rel="stylesheet" href="/media/css/swiper.min.css">
+    <!-- Magnigic Popup-->
+    <link rel="stylesheet" href="/media/css/magnific-popup.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/media/css/default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    {% comment %} <link rel="stylesheet" href="/media/css/custom.css"> {% endcomment %}
+    <script src="/media/js/main.js"></script>
+    
+    
+    
+    
+    
+    
+    
+  </head>
+  <body style="padding-top: 50px; bg-dark text-white">
+    <input type="hidden" id="csrf" value="{{csrf_token}}">
+    <header class="header">
+      
+      <nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
+        <div class="container-fluid">
+          <img style="height: 50px; width: 70px;" src="{% static '/images/logo.png' %}" alt="logo">
+          <div class="d-flex align-items-center"><a class="navbar-brand py-1" href="/">
+            <h3 class="text-info">World Believer's Blog<p style="font-size: 14px; padding-left: 40px; color: #000;"><i>"with love to reach the world"</i></p></h3>
+          </div>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+
+          <!-- /marquee -->
+          <marquee behavior="slow" direction="left"><a href="/"><span style="margin-bottom: 10px;text-decoration: none; border-radius: 30%; font-size: 16px; color: red;">Welcome back <i>{{ request.user }}!</i></span>
+          </marquee></a>
+          <!-- Navbar Collapse -->
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+              
+            <ul class="navbar-nav ml-auto">
+                {% comment %} {% comment %} <a class="nav-item nav-link" href="/">HOME</a> {% endcomment %}
+       
+                
+                
+                
+                {% if request.user.is_authenticated %}
+                <ul>
+                  
+                  <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+                    <a class="btn btn-info" href="{% url 'add_blog' %}">Create Blog</a>
+                  </li>
+                  <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+                    <a class="btn btn-info" href="">User Profile</a>
+                  </li>
+                  <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+                    <a class="btn btn-danger" href="{% url 'logout_user' %}">Logout</a>
+                  </li>
+                  
+                  <br><br>
+
+                  {% else %}
+                  <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+                    <a class="btn btn-outline-info" href="register">Register Here</a>
+                  </li>
+                  
+                  
+                  
+                  
+                  <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+                    <a class="btn btn-info" href="{% url 'login_view' %}">Add Blogs</a>
+                    
+                    {% comment %} <a class="nav-item nav-link text-info" href="{% url 'about' %}">ABOUT</a>  {% endcomment %}
+                  </li>
+                </ul>
+              
+              
+            </ul>
+              
+              
+       
+                    
+        
+        
+                   
+              {% endif %}
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- /Navbar -->
+    </header>
+   
+
+    {% block start %}
+    
+    
+
+
+    {% endblock %}
+
+
+    <footer class="position-relative z-index-10 d-print-none">
+   
+      <div class="py-4 font-weight-light bg-gray-800 text-gray-300">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-left">
+              <p class="text-sm mb-md-0">&copy; 2024, World Believer's Blogs.  All rights reserved.</p>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </footer>
+   
+    
+  </body>
+
+
+</html>
