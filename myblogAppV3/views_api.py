@@ -212,8 +212,7 @@ class UserView(APIView):
                         "email": user.email,
                         "is_active": user.is_active,
                         "is_staff": user.is_staff,
-                        "is_superuser": user.is_superuser,
-                        "password": user.password,
+                        "is_superuser": user.is_superuser
                     }
                 )
             return Response(response, status=status.HTTP_200_OK)
